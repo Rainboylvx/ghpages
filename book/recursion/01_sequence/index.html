@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8"/>
+    <title>无标题</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/markdown.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha512-fHwaWebuwA7NSF5Qg/af4UeDx9XqUpYpOGgubo3yWu+b2IQR4UeQwbb42Ti7gVAjNtVoI/I9TEoYeu9omwcC6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="/prism-theme/prism.css"/> -->
+    <link rel="stylesheet" href="/prism-theme/prism-vsc-dark-plus.css"/>
+  </head>
+  <body>
+    <div class="markdown-body">
+        <hr>
+<h2 id="title%3A-01%E5%BA%8F%E5%88%97status%3A-todocomment%3A-%E5%AD%A6%E4%B9%A0%3A%E9%80%92%E5%BD%92%E5%B0%B1%E6%98%AF%E5%9C%A8%E6%A0%91%E4%B8%8A%E8%A1%8C%E8%B5%B0" tabindex="-1"><a class="header-anchor" href="#title%3A-01%E5%BA%8F%E5%88%97status%3A-todocomment%3A-%E5%AD%A6%E4%B9%A0%3A%E9%80%92%E5%BD%92%E5%B0%B1%E6%98%AF%E5%9C%A8%E6%A0%91%E4%B8%8A%E8%A1%8C%E8%B5%B0">§</a> title: 01序列
+status: TODO
+comment: 学习:递归就是在树上行走</h2>
+<h1>01序列</h1>
+<nav class="table-of-contents"><ol><li><a href="#title%3A-01%E5%BA%8F%E5%88%97status%3A-todocomment%3A-%E5%AD%A6%E4%B9%A0%3A%E9%80%92%E5%BD%92%E5%B0%B1%E6%98%AF%E5%9C%A8%E6%A0%91%E4%B8%8A%E8%A1%8C%E8%B5%B0"> title: 01序列status: TODOcomment: 学习:递归就是在树上行走</a></li><li><a href="#01%E5%BA%8F%E5%88%97">01序列</a><ol><li><a href="#%E9%A2%98%E7%9B%AE"> 题目</a><ol><li><a href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"> 题目描述</a></li><li><a href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B"> 输入样例</a></li><li><a href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B"> 输出样例</a></li></ol></li><li><a href="#%E6%80%BB%E7%BB%93"> 总结</a></li></ol></li></ol></nav><h2 id="%E9%A2%98%E7%9B%AE" tabindex="-1"><a class="header-anchor" href="#%E9%A2%98%E7%9B%AE">§</a> 题目</h2>
+<h3 id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" tabindex="-1"><a class="header-anchor" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0">§</a> 题目描述</h3>
+<p>有一个盒子,盒子有两种数字,<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></eq>和<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></eq>每种数字有无限个,
+现在有n( <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>&lt;</mo><mo>=</mo><mi>n</mi><mo>&lt;</mo><mo>=</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">1&lt;= n &lt;= 20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">20</span></span></span></span></eq>)个人取数字,这n个人排成一排,先第一个人拿,然后依次去取.</p>
+<p>问:一共有多少人可能性.按字典序从大到小输出所有的可能性</p>
+<h3 id="%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B" tabindex="-1"><a class="header-anchor" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B">§</a> 输入样例</h3>
+<!--beforebegin--><div class="language-plaintext line-numbers-mode"><!--afterbegin--><div class="zeroclipboard-container">
+    <div class="clipboard-copy">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+    </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+    </svg>
+    </div>
+  </div><pre class="language-plaintext"><div class="line-numbers-wrapper"><span class="line-number">1</span><br></div><code>3
+</code></pre>
+<!--beforeend--></div><!--afterend--><h3 id="%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B" tabindex="-1"><a class="header-anchor" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B">§</a> 输出样例</h3>
+<!--beforebegin--><div class="language-plaintext line-numbers-mode"><!--afterbegin--><div class="zeroclipboard-container">
+    <div class="clipboard-copy">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+    </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+    </svg>
+    </div>
+  </div><pre class="language-plaintext"><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div><code>000
+001
+010
+011
+100
+101
+110
+111
+</code></pre>
+<!--beforeend--></div><!--afterend--><p>每个位置有两种可能性,0,1,所以最终有<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></eq>行结果</p>
+<p>针对样例,我们可以使用3层<code>for</code>来解,</p>
+<p>TODO 代码</p>
+<p>但是针对题目的n是变化的,所以不能使用for</p>
+<p>想一想,前面[…/fibonacci/index.md],如果使用来dfs来解呢?</p>
+<p>首选是原问题<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span></eq>是什么</p>
+<p>如果分解子问题<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">B_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0502em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></eq></p>
+<p>当第1个人放了数字后,后面<code>2 3 4 5</code>就和第一个人没有关系了</p>
+<!--beforebegin--><div class="language- line-numbers-mode"><!--afterbegin--><div class="zeroclipboard-container">
+    <div class="clipboard-copy">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+    </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+    </svg>
+    </div>
+  </div><pre class="language-text"><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div><code>1 2 3 4 5
+  |-----|
+</code></pre>
+<!--beforeend--></div><!--afterend--><p>游戏设计:找三个人拿数字的游戏</p>
+<ul>
+<li>随机拿</li>
+<li>最小的可能性是?</li>
+<li>最大的可能性是?</li>
+<li>第一个人的可能取?</li>
+<li>怎么用for循环来写三个人的问题?</li>
+<li>能不能用for来解n个人的问题?不能用dfs</li>
+<li>原问题是什么?</li>
+<li>第一个人怎么保证尽可能小?如果</li>
+<li>整体怎么保证小的先输出?如果每个人都像第一个人一样,就进可能小</li>
+</ul>
+<p>进一步的抽象: 有n个人,第<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>e</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dep</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal">p</span></span></span></span></eq>个人把它先放0,然后让后面的去做这个问题</p>
+<p>也可以用集合的思想来思考这个问题</p>
+<p>第一个人只可能有0,1有种情况,所以分成两种类的集合</p>
+<h2 id="%E6%80%BB%E7%BB%93" tabindex="-1"><a class="header-anchor" href="#%E6%80%BB%E7%BB%93">§</a> 总结</h2>
+<p>📝:递归就是在树上行走</p>
+
+    </div>
+    <script>
+        //copy to clipboard
+        document.querySelectorAll('.zeroclipboard-container').forEach( function(clipContainer){
+            clipContainer.addEventListener('click', function(event) {
+                if( clipContainer.classList.contains('copied')) return;
+
+                let text = clipContainer.parentNode.textContent
+                clipContainer.classList.add('copied');
+                navigator.clipboard.writeText(text).then( ()=>{
+                        setTimeout( ()=> clipContainer.classList.remove('copied'),1500)
+                    },
+                    ()=> { //failed
+                        setTimeout( ()=> clipContainer.classList.remove('copied'),1500)
+                        alert("copy failed!");
+                    }
+                )
+
+
+            })
+        })
+    </script>
+  </body>
+</html>

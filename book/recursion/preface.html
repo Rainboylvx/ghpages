@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8"/>
+    <title>无标题</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/markdown.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha512-fHwaWebuwA7NSF5Qg/af4UeDx9XqUpYpOGgubo3yWu+b2IQR4UeQwbb42Ti7gVAjNtVoI/I9TEoYeu9omwcC6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="/prism-theme/prism.css"/> -->
+    <link rel="stylesheet" href="/prism-theme/prism-vsc-dark-plus.css"/>
+  </head>
+  <body>
+    <div class="markdown-body">
+        <p>递归基本上是后面的所有的内容的基础,只能学会了递归,我们才能理解,后面的</p>
+<ul>
+<li>搜索</li>
+<li>暴力枚举</li>
+<li>动态规划</li>
+</ul>
+<p>在本章,你需要学会</p>
+<ul>
+<li>递归的一般写法(模板)<!--beforebegin--><div class="language-cpp line-numbers-mode"><!--afterbegin--><div class="zeroclipboard-container">
+    <div class="clipboard-copy">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+    </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+    </svg>
+    </div>
+  </div><pre class="language-cpp"><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div><code>void <span class="token function">dfs</span><span class="token punctuation">(</span>int n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> n 到达边界<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       操作
+       <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>int i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>x<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token comment">//分步任务</span>
+      <span class="token function">dfs</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<!--beforeend--></div><!--afterend--></li>
+<li>最简单的树的概念</li>
+<li>每个递归都可以表示成一棵树</li>
+<li>递归就是在树上的行走</li>
+<li>分解子问题</li>
+<li>递归的前进与回溯</li>
+<li>恢复现场</li>
+<li>用数学语言来描述递归(高中数学函数)</li>
+</ul>
+
+    </div>
+    <script>
+        //copy to clipboard
+        document.querySelectorAll('.zeroclipboard-container').forEach( function(clipContainer){
+            clipContainer.addEventListener('click', function(event) {
+                if( clipContainer.classList.contains('copied')) return;
+
+                let text = clipContainer.parentNode.textContent
+                clipContainer.classList.add('copied');
+                navigator.clipboard.writeText(text).then( ()=>{
+                        setTimeout( ()=> clipContainer.classList.remove('copied'),1500)
+                    },
+                    ()=> { //failed
+                        setTimeout( ()=> clipContainer.classList.remove('copied'),1500)
+                        alert("copy failed!");
+                    }
+                )
+
+
+            })
+        })
+    </script>
+  </body>
+</html>

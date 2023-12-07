@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8"/>
+    <title>有用的python</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/markdown.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha512-fHwaWebuwA7NSF5Qg/af4UeDx9XqUpYpOGgubo3yWu+b2IQR4UeQwbb42Ti7gVAjNtVoI/I9TEoYeu9omwcC6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="/prism-theme/prism.css"/> -->
+    <link rel="stylesheet" href="/prism-theme/prism-vsc-dark-plus.css"/>
+  </head>
+  <body>
+    <div class="markdown-body">
+        <h2 id="%E8%AF%B4%E6%98%8E" tabindex="-1"><a class="header-anchor" href="#%E8%AF%B4%E6%98%8E">§</a> 说明</h2>
+<p>比赛可以使用python3,学一下python3,很有用的.</p>
+<ul>
+<li>当成计算器来使用
+<ul>
+<li>计算排列组合</li>
+</ul>
+</li>
+<li>快速代码
+<ul>
+<li>itertools 库,排序,组合</li>
+</ul>
+</li>
+</ul>
+<h2 id="%E8%AE%A1%E7%AE%97%E5%99%A8" tabindex="-1"><a class="header-anchor" href="#%E8%AE%A1%E7%AE%97%E5%99%A8">§</a> 计算器</h2>
+<!--beforebegin--><div class="language- line-numbers-mode"><!--afterbegin--><div class="zeroclipboard-container">
+    <div class="clipboard-copy">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+    </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+    </svg>
+    </div>
+  </div><pre class="language-text"><div class="line-numbers-wrapper"><span class="line-number">1</span><br></div><code>+ - * / // ** %
+</code></pre>
+<!--beforeend--></div><!--afterend--><!--beforebegin--><div class="language-python line-numbers-mode"><!--afterbegin--><div class="zeroclipboard-container">
+    <div class="clipboard-copy">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+    </svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+    </svg>
+    </div>
+  </div><pre class="language-python"><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div><code><span class="token keyword">import</span> math
+<span class="token comment"># 排列</span>
+math<span class="token punctuation">.</span>perm<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment"># 组合</span>
+math<span class="token punctuation">.</span>comb<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre>
+<!--beforeend--></div><!--afterend--><h2 id="%E5%BC%95%E7%94%A8" tabindex="-1"><a class="header-anchor" href="#%E5%BC%95%E7%94%A8">§</a> 引用</h2>
+<ul>
+<li><a href="https://hcppub.wordpress.com/2020/11/04/combination/">排列組合的計算 – 自然科學和數學計算 學習分享</a></li>
+</ul>
+
+    </div>
+    <script>
+        //copy to clipboard
+        document.querySelectorAll('.zeroclipboard-container').forEach( function(clipContainer){
+            clipContainer.addEventListener('click', function(event) {
+                if( clipContainer.classList.contains('copied')) return;
+
+                let text = clipContainer.parentNode.textContent
+                clipContainer.classList.add('copied');
+                navigator.clipboard.writeText(text).then( ()=>{
+                        setTimeout( ()=> clipContainer.classList.remove('copied'),1500)
+                    },
+                    ()=> { //failed
+                        setTimeout( ()=> clipContainer.classList.remove('copied'),1500)
+                        alert("copy failed!");
+                    }
+                )
+
+
+            })
+        })
+    </script>
+  </body>
+</html>

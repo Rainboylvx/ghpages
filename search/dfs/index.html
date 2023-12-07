@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8"/>
+    <title>无标题</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/markdown.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha512-fHwaWebuwA7NSF5Qg/af4UeDx9XqUpYpOGgubo3yWu+b2IQR4UeQwbb42Ti7gVAjNtVoI/I9TEoYeu9omwcC6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="/prism-theme/prism.css"/> -->
+    <link rel="stylesheet" href="/prism-theme/prism-vsc-dark-plus.css"/>
+  </head>
+  <body>
+    <div class="info-header">
+      <div class="title-bar">
+    <h1>未知</h1>
+</div>
+      <div class="badges">
+    <a target="_blank" href="/search/dfs/index.html">open in new tags</a>
+    <a target="_blank" href="https://github.com/">open in github</a>
+</div>
+    </div>
+    <div class="markdown-body">
+        <h2 id="%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF" tabindex="-1"><a class="header-anchor" href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF">§</a> 设计思路</h2>
+<p>先通过三个题目来理解dfs</p>
+<ul>
+<li>迷宫1:迷宫是否有解</li>
+<li>迷宫2:迷宫解的数量</li>
+<li>迷宫3:
+<ol>
+<li>求出最短路径的值</li>
+<li>输出所有解的路径</li>
+</ol>
+</li>
+</ul>
+<p>通过迷宫1,你需要理解下面的概念</p>
+<ul>
+<li>dfs就是递归</li>
+<li>前进与回溯</li>
+<li>什么是状态
+<ul>
+<li>对于迷宫来说状态就是,通过数据的记录,你可以确定你当前所处的迷宫的<strong>位置</strong>,以及走过的点</li>
+<li>如何表示走迷宫的状态
+<ul>
+<li>位置</li>
+<li>走过的点</li>
+</ul>
+</li>
+<li>为什么位置是dfs的参数,而走过的点,不能作为dfs的参数</li>
+</ul>
+</li>
+<li>dfs的本质就是在树上的行走,而每树上的每个点都代表一种状态</li>
+</ul>
+<p>通过迷宫2,你需要理解下面的概念</p>
+<ul>
+<li>什么是现场
+<ul>
+<li>如何设置与恢复现场</li>
+</ul>
+</li>
+<li>为什么不会导致迷宫走重复的路
+<ul>
+<li>设置与恢复现场</li>
+</ul>
+</li>
+</ul>
+<p>通过迷宫3,你需要理解下面的概念</p>
+<ul>
+<li>什么是栈</li>
+<li>栈的操作</li>
+<li>递归本质就是在栈上的操作</li>
+<li>怎么利用递归的栈来记录走过的路径</li>
+<li>怎么求最短路径的值</li>
+</ul>
+<p>两个新的题目</p>
+<ol>
+<li>狼羊菜</li>
+<li>酒的平分</li>
+</ol>
+<p>巩固学习</p>
+<ul>
+<li>状态的表示</li>
+<li>状态之间的迁移</li>
+</ul>
+<p>这两个题目为后面的图论与DP打下基础</p>
+<p>练习</p>
+<ul>
+<li>八皇后</li>
+<li>kkkk 抱佛脚</li>
+</ul>
+
+    </div>
+    <script>
+        //copy to clipboard
+        document.querySelectorAll('.zeroclipboard-container').forEach( function(clipContainer){
+            clipContainer.addEventListener('click', function(event) {
+                if( clipContainer.classList.contains('copied')) return;
+
+                let text = clipContainer.parentNode.textContent
+                clipContainer.classList.add('copied');
+                navigator.clipboard.writeText(text).then( ()=>{
+                        setTimeout( ()=> clipContainer.classList.remove('copied'),1500)
+                    },
+                    ()=> { //failed
+                        setTimeout( ()=> clipContainer.classList.remove('copied'),1500)
+                        alert("copy failed!");
+                    }
+                )
+
+
+            })
+        })
+    </script>
+  </body>
+</html>
